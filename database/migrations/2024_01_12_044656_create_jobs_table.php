@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('job_id');           // 1234567, 31bhfd673b
+            $table->string('title');            // Senior PHP Software Engineer
+            $table->string('company');          // Company, Inc.
+            $table->string('language');         // PHP
+            $table->string('redirect_url');     // https://blah.com/...
+            $table->string('location');         // Remote, Hybrid, On-Site (...)
+            $table->date('posted_date');        // 01-05-2024
+            $table->timestamps();               // created_at, updated_at
         });
     }
 
