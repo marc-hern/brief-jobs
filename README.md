@@ -34,11 +34,11 @@ In progress
 TODO:
 
 -   [x] MySQL integration
--   [ ] Containerization (Docker)
 -   [x] Cron to delete old listings as Invokable
--   [ ] AWS
 -   [x] PHPUnit
 -   [ ] Save postings for later per User
 -   [ ] DB indexing
--   [ ] Caching
+-   [x] Caching
 -   [ ] Service Providers
+-   [ ] Containerization (Docker)
+-   [ ] Create web crawling cron
