@@ -4,3 +4,6 @@ reset:
 
 cron:
 	php artisan schedule:test
+
+backend_test:
+	php artisan test
