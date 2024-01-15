@@ -12,11 +12,15 @@ class JobService
 {
     public function __construct() {}
 
-    public function getJobsByLanguage($language) {
+    /**
+     * Get jobs from cache: if empty get from db and place in cache
+     * @param string $language
+     * @return Object
+     */
+    public function getJobsByLanguage(string $language) : Object{
         $cacheKey = CACHE_PREFIX.$language;
         $jobs     = Cache::get($cacheKey);
 
-        // If cache is empty: get from db and place in cache
         if ($jobs == null) {
             $jobs = Job::where('language', $language)->get();
             // $jobs = Job::where('language', $language)->paginate(10);

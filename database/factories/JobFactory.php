@@ -28,11 +28,11 @@ class JobFactory extends Factory
     ];
 
     private $languageOptions = [
-        'PHP',
-        'JavaScript',
-        'Python',
-        'Go',
-        'Java'
+        'php',
+        'javascript',
+        'python',
+        'go',
+        'java'
     ];
 
     private $locationOptions = [

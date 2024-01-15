@@ -39,6 +39,7 @@ TODO:
 -   [ ] Save postings for later per User
 -   [x] DB indexing
 -   [x] Caching
--   [ ] Service Providers
+-   [x] Service Providers
 -   [ ] Containerization (Docker)
 -   [ ] Create web crawling cron
+-   [ ] Error handling status codes

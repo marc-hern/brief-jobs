@@ -11,6 +11,6 @@
     define('CACHE_PREFIX', 'jobs-');
 
     define('SUPPORTED_LANGUAGES', [
-        'PHP',
-        'JavaScript'
+        'php',
+        'javascript'
     ]);

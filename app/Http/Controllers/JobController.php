@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Response;
 use Request;
 use App\Http\Requests\StoreJobRequest;
 use App\Http\Requests\UpdateJobRequest;
@@ -20,9 +21,19 @@ class JobController extends Controller
     /**
      * GET /jobs/{language}
      * @param string $language
-     * @return array
+     * @return
      */
-    public function getJobsByLanguage($language) {
-        return $this->jobService->getJobsByLanguage($language);
+    public function getJobsByLanguage(string $language) {
+        if (!$language) {
+            return Response::json(null, 422);
+        }
+
+        if (!in_array(strtolower($language), SUPPORTED_LANGUAGES)) {
+            return Response::json(null, 422);
+        }
+
+        $jobs = $this->jobService->getJobsByLanguage($language);
+
+        return Response::json($jobs, 200);
     }
 }
