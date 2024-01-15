@@ -35,7 +35,7 @@ TODO:
 
 -   [x] MySQL integration
 -   [ ] Containerization (Docker)
--   [x] Cron to delete old listings
+-   [x] Cron to delete old listings as Invokable
 -   [ ] AWS
 -   [x] PHPUnit
 -   [ ] Save postings for later per User

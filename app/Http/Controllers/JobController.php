@@ -23,15 +23,6 @@ class JobController extends Controller
      * @return array
      */
     public function getJobsByLanguage($language) {
-        // Get from cache
-        $jobs = Cache::get('jobs-'.$language);
-
-        // If cache is empty: get from db and place in cache
-        if ($jobs == null) {
-            $jobs = $this->jobService->getJobsByLanguage($language);
-            Cache::put('jobs-'.$language, $jobs, now()->addMinutes(60));
-        }
-
-        return $jobs;
+        return $this->jobService->getJobsByLanguage($language);
     }
 }
