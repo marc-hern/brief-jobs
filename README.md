@@ -37,7 +37,7 @@ TODO:
 -   [x] Cron to delete old listings as Invokable
 -   [x] PHPUnit
 -   [ ] Save postings for later per User
--   [ ] DB indexing
+-   [x] DB indexing
 -   [x] Caching
 -   [ ] Service Providers
 -   [ ] Containerization (Docker)
