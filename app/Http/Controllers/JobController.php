@@ -7,6 +7,7 @@ use App\Http\Requests\StoreJobRequest;
 use App\Http\Requests\UpdateJobRequest;
 use App\Models\Job;
 use App\Services\JobService;
+use Illuminate\Support\Facades\Cache;
 
 class JobController extends Controller
 {
@@ -22,8 +23,14 @@ class JobController extends Controller
      * @return array
      */
     public function getJobsByLanguage($language) {
-        $jobs = $this->jobService->getJobsByLanguage($language);
-        // dd(Request::all());
+        // Get from cache
+        $jobs = Cache::get('jobs-'.$language);
+
+        // If cache is empty: get from db and place in cache
+        if ($jobs == null) {
+            $jobs = $this->jobService->getJobsByLanguage($language);
+            Cache::put('jobs-'.$language, $jobs, now()->addMinutes(60));
+        }
 
         return $jobs;
     }
